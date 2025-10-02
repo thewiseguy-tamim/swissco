@@ -1,6 +1,8 @@
 export default function RepairPanel({ className = "" }) {
   return (
-    <div className={`relative aspect-square w-full max-w-[520px] mx-auto ${className}`}>
+    <div
+      className={`relative aspect-square w-full max-w-[520px] mx-auto ${className}`}
+    >
       {/* Soft outer glow ring */}
       <div className="absolute -inset-[2px] rounded-3xl bg-[conic-gradient(from_180deg_at_50%_50%,rgba(16,185,129,.35),rgba(34,211,238,.35),rgba(168,85,247,.35),rgba(16,185,129,.35))] opacity-80 blur-[14px] wwd-rotate-slow" />
 
