@@ -13,9 +13,9 @@ export default function App() {
       <Navbar />
       <main>
         <Hero />
-        <section id="whatwedo">
+        {/* <section id="whatwedo">
             <WhatWeDo />
-          </section>
+          </section> */}
         <section id="services">
           <Services />
         </section>

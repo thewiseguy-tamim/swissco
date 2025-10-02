@@ -75,7 +75,7 @@ function CardBackText({ title, blurb, points }) {
 
 export default function Services() {
   return (
-    <section className="bg-transparent">
+    <section className="bg-transparent overflow-hidden">
       <Container className="py-24 md:py-28">
         <Reveal>
           <h2 className="font-display text-3xl md:text-4xl mb-8">Services</h2>
