@@ -2,10 +2,10 @@ import PixelTransition from "../components/card/serviceCard";
 import Reveal from "../components/Reveal";
 import Container from "../components/layout/Container";
 
-import handlingImg from "../assets/plc.png";
-import processingImg from "../assets/plc.png";
-import integrationImg from "../assets/plc.png";
-import supportImg from "../assets/plc.png";
+import handlingImg from "../assets/plc1.png";
+import processingImg from "../assets/inv.png";
+import integrationImg from "../assets/moni.png";
+import supportImg from "../assets/cnc.png";
 
 const services = [
   {

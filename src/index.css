@@ -7,6 +7,9 @@
   body { @apply text-white antialiased bg-neutral-950; }
 }
 
+/* Make default sections transparent so global BG shows */
+section { background-color: transparent; }
+
 /* What We Do visuals */
 @keyframes wwd-trace {
   to { stroke-dashoffset: -1000; }
@@ -23,3 +26,31 @@
 .wwd-animate-trace-fast { animation: wwd-trace 9s linear infinite; }
 .wwd-rotate-slow { animation: wwd-rotate 14s linear infinite; }
 .wwd-floaty { animation: wwd-floaty 6s ease-in-out infinite; }
+
+/* About visuals */
+@keyframes about-shine-kf {
+  0%   { transform: translateX(-80%) rotate(12deg); opacity: .0; }
+  15%  { opacity: .25; }
+  50%  { opacity: .1; }
+  100% { transform: translateX(180%) rotate(12deg); opacity: 0; }
+}
+.about-shine {
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.12), transparent);
+  animation: about-shine-kf 2.8s ease-in-out infinite;
+}
+
+@keyframes about-rotate-kf { to { transform: rotate(360deg); } }
+.about-rotate-slow { animation: about-rotate-kf 18s linear infinite; }
+
+@keyframes about-float-kf {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-8px); }
+  100% { transform: translateY(0px); }
+}
+.about-float-slow { animation: about-float-kf 9s ease-in-out infinite; }
+
+@keyframes modal-in {
+  from { opacity: 0; transform: scale(.98) translateY(6px); }
+  to   { opacity: 1; transform: scale(1) translateY(0); }
+}
+.modal-enter { animation: modal-in 220ms ease-out; }
