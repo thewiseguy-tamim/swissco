@@ -1,9 +1,10 @@
 import Reveal from "../components/Reveal";
+import Container from "../components/layout/Container";
 
 export default function About() {
   return (
-    <section className="bg-neutral-950">
-      <div className="max-w-7xl mx-auto px-6 py-24 md:py-28">
+    <section className="bg-transparent">
+      <Container className="py-24 md:py-28">
         <Reveal>
           <h2 className="font-display text-3xl md:text-4xl mb-4">About</h2>
         </Reveal>
@@ -14,7 +15,7 @@ export default function About() {
             and operator‑first design.
           </p>
         </Reveal>
-      </div>
+      </Container>
     </section>
   );
 }

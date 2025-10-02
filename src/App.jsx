@@ -4,6 +4,7 @@ import Services from "./sections/Services";
 import About from "./sections/About";
 import Contact from "./sections/Contact";
 import Footer from "./sections/Footer";
+import WhatWeDo from "./sections/WhatWeDo";
 
 export default function App() {
   return (
@@ -12,9 +13,13 @@ export default function App() {
       <Navbar />
       <main>
         <Hero />
+        <section id="whatwedo">
+            <WhatWeDo />
+          </section>
         <section id="services">
           <Services />
         </section>
+        
         <section id="about">
           
           <About />

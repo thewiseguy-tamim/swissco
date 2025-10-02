@@ -1,10 +1,11 @@
 import Reveal from "../components/Reveal";
 import Button from "../components/buttons/Button";
+import Container from "../components/layout/Container";
 
 export default function Contact() {
   return (
-    <section className="bg-neutral-950">
-      <div className="max-w-7xl mx-auto px-6 py-24 md:py-28">
+    <section className="bg-transparent">
+      <Container className="py-24 md:py-28">
         <Reveal>
           <h2 className="font-display text-3xl md:text-4xl mb-6">Contact</h2>
         </Reveal>
@@ -24,7 +25,7 @@ export default function Contact() {
             </Button>
           </div>
         </Reveal>
-      </div>
+      </Container>
     </section>
   );
 }

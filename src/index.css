@@ -1,2 +1,25 @@
 @import "tailwindcss";
 
+@layer base {
+  :root { color-scheme: dark; }
+  html, body, #root { height: 100%; }
+  html, body { background-color: #0a0a0a; }
+  body { @apply text-white antialiased bg-neutral-950; }
+}
+
+/* What We Do visuals */
+@keyframes wwd-trace {
+  to { stroke-dashoffset: -1000; }
+}
+@keyframes wwd-rotate {
+  to { transform: rotate(360deg); }
+}
+@keyframes wwd-floaty {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+  100% { transform: translateY(0); }
+}
+.wwd-animate-trace { animation: wwd-trace 18s linear infinite; }
+.wwd-animate-trace-fast { animation: wwd-trace 9s linear infinite; }
+.wwd-rotate-slow { animation: wwd-rotate 14s linear infinite; }
+.wwd-floaty { animation: wwd-floaty 6s ease-in-out infinite; }

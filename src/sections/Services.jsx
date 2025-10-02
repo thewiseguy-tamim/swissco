@@ -1,5 +1,6 @@
 import PixelTransition from "../components/card/serviceCard";
 import Reveal from "../components/Reveal";
+import Container from "../components/layout/Container";
 
 import handlingImg from "../assets/plc.png";
 import processingImg from "../assets/plc.png";
@@ -75,7 +76,7 @@ function CardBackText({ title, blurb, points }) {
 export default function Services() {
   return (
     <section className="bg-transparent">
-      <div className="mx-auto max-w-[1600px] px-6 py-24 md:py-28">
+      <Container className="py-24 md:py-28">
         <Reveal>
           <h2 className="font-display text-3xl md:text-4xl mb-8">Services</h2>
         </Reveal>
@@ -85,7 +86,7 @@ export default function Services() {
             <Reveal key={s.title} delay={idx * 100}>
               <div className="group">
                 <PixelTransition
-                  aspectRatio="100%"             // square
+                  aspectRatio="100%"
                   gridSize={10}
                   pixelColor={s.pixelColor}
                   animationStepDuration={0.55}
@@ -101,7 +102,7 @@ export default function Services() {
             </Reveal>
           ))}
         </div>
-      </div>
+      </Container>
     </section>
   );
 }
