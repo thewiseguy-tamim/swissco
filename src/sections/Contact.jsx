@@ -25,9 +25,7 @@ export default function Contact() {
       const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
       const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
 
-      await emailjs.sendForm(serviceId, templateId, formRef.current, {
-        publicKey,
-      });
+      await emailjs.sendForm(serviceId, templateId, formRef.current, { publicKey });
 
       setStatus("success");
       setNote("Thanks! Your message has been sent. We’ll get back to you shortly.");
@@ -56,11 +54,7 @@ export default function Contact() {
             </Reveal>
 
             <Reveal delay={140}>
-              <form
-                ref={formRef}
-                onSubmit={onSubmit}
-                className="space-y-5 max-w-xl"
-              >
+              <form ref={formRef} onSubmit={onSubmit} className="space-y-5 max-w-xl">
                 <div>
                   <label htmlFor="name" className="sr-only">Name</label>
                   <input
@@ -98,23 +92,19 @@ export default function Contact() {
                 </div>
 
                 <div className="pt-1">
-                  <button
+                  <Button
                     type="submit"
+                    variant="primary"
+                    size="md"
                     disabled={status === "sending"}
-                    className={`w-full sm:w-40 inline-flex items-center justify-center rounded-md bg-white/20 text-white px-5 py-3 ring-1 ring-white/10 hover:bg-white/25 transition ${
-                      status === "sending" ? "opacity-70 cursor-not-allowed" : ""
-                    }`}
+                    className="w-full sm:w-40 disabled:opacity-70 disabled:pointer-events-none"
                   >
                     {status === "sending" ? "Sending..." : "Send"}
-                  </button>
+                  </Button>
                 </div>
 
                 {note && (
-                  <p
-                    className={`text-sm ${
-                      status === "error" ? "text-rose-300" : "text-emerald-300"
-                    }`}
-                  >
+                  <p className={`text-sm ${status === "error" ? "text-rose-300" : "text-emerald-300"}`}>
                     {note}
                   </p>
                 )}
@@ -122,23 +112,17 @@ export default function Contact() {
             </Reveal>
           </div>
 
-          {/* RIGHT: Details + Monochrome Map */}
+          {/* RIGHT: Details + Colored Map */}
           <div className="md:col-span-5 w-full">
             <Reveal>
               <div className="space-y-6">
                 <div>
-                  <div className="text-white/60 text-sm uppercase tracking-wide">
-                    Visit us
-                  </div>
-                  <div className="mt-1 text-white">
-                    {ADDRESS}
-                  </div>
+                  <div className="text-white/60 text-sm uppercase tracking-wide">Visit us</div>
+                  <div className="mt-1 text-white">{ADDRESS}</div>
                 </div>
 
                 <div>
-                  <div className="text-white/60 text-sm uppercase tracking-wide">
-                    Talk to us
-                  </div>
+                  <div className="text-white/60 text-sm uppercase tracking-wide">Talk to us</div>
                   <div className="mt-1 text-white">
                     +880 1711 000 000
                     <br />
@@ -147,7 +131,6 @@ export default function Contact() {
                 </div>
 
                 <div className="flex items-center gap-4 text-white/70">
-                  {/* Simple inline icons */}
                   <a href="#" aria-label="Twitter" className="hover:text-white transition">
                     <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M22.46 6c-.77.35-1.6.58-2.46.69a4.3 4.3 0 0 0 1.88-2.38 8.6 8.6 0 0 1-2.72 1.04 4.28 4.28 0 0 0-7.3 3.9A12.14 12.14 0 0 1 3.15 4.9a4.27 4.27 0 0 0 1.32 5.72 4.25 4.25 0 0 1-1.94-.54v.05a4.28 4.28 0 0 0 3.43 4.19 4.3 4.3 0 0 1-1.93.07 4.28 4.28 0 0 0 3.99 2.97A8.59 8.59 0 0 1 2 19.54a12.11 12.11 0 0 0 6.56 1.92c7.88 0 12.2-6.53 12.2-12.2 0-.19 0-.39-.01-.58A8.6 8.6 0 0 0 22.46 6z"/></svg>
                   </a>
@@ -162,13 +145,13 @@ export default function Contact() {
                   </a>
                 </div>
 
-                {/* Map */}
+                {/* Map (colored) */}
                 <div className="rounded-2xl overflow-hidden ring-1 ring-white/10 bg-white/5">
                   <div className="aspect-[4/3] md:aspect-[5/4]">
                     <iframe
                       title="Google Map - Mirpur, Dhaka"
                       src={MAP_SRC}
-                      className="w-full h-full grayscale contrast-125 brightness-90"
+                      className="w-full h-full"
                       loading="lazy"
                       referrerPolicy="no-referrer-when-downgrade"
                     />
